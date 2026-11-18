@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#202325" />
+    <title>Cala Roja · TDU2 Web</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="drive">
+    <header>
+      <h1>TDU2 <i>/</i> WEB</h1>
+      <div class="network"><b id="status-dot"></b><span id="network" role="status">Подключение…</span></div>
+      <button id="help" aria-haspopup="dialog">Управление</button>
+    </header>
+    <main class="stage">
+      <canvas id="scene" aria-label="Трёхмерная трасса Cala Roja с камерой за автомобилем"></canvas>
+      <section class="location">
+        <span class="place">Ибица <b>/</b> Кольцо</span>
+        <h2>Cala Roja</h2>
+        <p id="timing">Пересеки линию старта</p>
+      </section>
+      <div class="map-box">
+        <canvas
+          id="map"
+          width="360"
+          height="240"
+          aria-label="Схема трассы с машинами и следующей контрольной точкой"
+        ></canvas
+        ><span class="north" aria-hidden="true">N ↑</span>
+      </div>
+      <div class="instruments">
+        <div class="readout"><strong id="speed">000</strong><span>КМ/Ч</span></div>
+        <div class="meter" aria-hidden="true"><b id="fill"></b></div>
+        <small id="best">Лучший круг —</small>
+      </div>
+      <div id="prompt" class="prompt"><kbd>W</kbd> или <kbd>↑</kbd> — газ</div>
+      <div class="touch" aria-label="Сенсорное управление">
+        <div>
+          <button data-key="left" aria-label="Влево">←</button
+          ><button data-key="right" aria-label="Вправо">→</button>
+        </div>
+        <div><button data-key="brake">Тормоз</button><button class="gas" data-key="gas">Газ</button></div>
+      </div>
+      <div id="fault" class="fault" role="alert" hidden></div>
+    </main>
+    <dialog id="menu">
+      <form method="dialog">
+        <div class="dialog-head">
+          <span class="place">TDU2 / WEB</span><button autofocus aria-label="Закрыть">×</button>
+        </div>
+        <h2>Управление</h2>
+        <dl>
+          <dt>Газ</dt>
+          <dd>W / ↑</dd>
+          <dt>Тормоз и задний ход</dt>
+          <dd>S / ↓</dd>
+          <dt>Поворот</dt>
+          <dd>A D / ← →</dd>
+          <dt>Вернуться на старт</dt>
+          <dd>R</dd>
+        </dl>
+        <p>
+          Проезжай оранжевые отметки по порядку. На карте выделена следующая точка. Водители на одном сервере
+          видят друг друга.
+        </p>
+        <button id="reset" type="button">На старт</button> <a href="/compat.html">Проверить PC-копию</a>
+      </form>
+    </dialog>
+    <script type="module" src="/game.js"></script>
+  </body>
+</html>

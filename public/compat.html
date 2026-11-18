@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Проверка PC-копии · TDU2 Web</title
+  ><link rel="icon" href="data:," /><link rel="stylesheet" href="/style.css" />
+  <main class="compat">
+    <a href="/">← К поездке</a>
+    <h1>Проверка PC-копии</h1>
+    <p>
+      Выбери папку, где лежит <code>TestDrive2.exe</code>. Браузер рассчитает SHA-256 и сверит записи индексов
+      MAP с размерами архивов BIG. Все файлы остаются на устройстве.
+    </p>
+    <label for="folder">Папка с игрой</label><input id="folder" type="file" webkitdirectory multiple /><output
+      id="result"
+      aria-live="polite"
+    ></output>
+    <p>
+      Результат описывает состав установки. Для запуска оригинальной игры ещё предстоит реализовать среду
+      выполнения.
+    </p>
+  </main>
+  <script type="module" src="/compat.js"></script>
+</html>

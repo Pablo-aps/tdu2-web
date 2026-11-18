@@ -1,0 +1,20 @@
+{
+  "name": "tdu2-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multiplayer browser driving prototype and TDU2 compatibility research",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "inspect:install": "node tools/inspect-install.js"
+  },
+  "dependencies": {
+    "three": "0.187.0",
+    "ws": "8.23.0"
+  }
+}
